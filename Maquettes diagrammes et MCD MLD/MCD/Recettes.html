@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>ADMIN PRINCIPAL</span> (
+    <span class='primary'>USERID</span>,
+    <span class='normal'>PSEUDO</span>,
+    <span class='normal'>PASSWORD</span>,
+    <span class='foreign'>USERID.1</span>,
+    <span class='foreign'>RECETTEID</span>,
+    <span class='foreign'>CHEFID</span>,
+    <span class='foreign'>USERID.2</span>
+  )
+</div>
+<div>
+  <span class='relation'>ADMIN SECONDAIRE</span> (
+    <span class='primary'>USERID</span>,
+    <span class='normal'>PSEUDO</span>,
+    <span class='normal'>PASSWORD</span>
+  )
+</div>
+<div>
+  <span class='relation'>RECETTE</span> (
+    <span class='primary'>RECETTEID</span>,
+    <span class='normal'>INGREDIENTSRECETTE</span>,
+    <span class='normal'>DUREERECETTE</span>,
+    <span class='normal'>COUTRECETTE</span>,
+    <span class='normal'>CHEFRECETTE</span>,
+    <span class='normal'>DESCRIPTIONRECETTE</span>
+  )
+</div>
+<div>
+  <span class='relation'>CHEF</span> (
+    <span class='primary'>CHEFID</span>,
+    <span class='normal'>NOMCHEF</span>,
+    <span class='normal'>PRENOMCHEF</span>
+  )
+</div>
+<div>
+  <span class='relation'>EST L'AUTEUR DE</span> (
+    <span class='foreign primary'>CHEFID</span>,
+    <span class='foreign primary'>RECETTEID</span>
+  )
+</div>
+<!--
+<div>
+  <span class='relation'>VISITEUR</span> (
+    <span class='primary'>VISITEURIP</span>
+  )
+</div>
+-->
+<div>
+  <span class='relation'>CONSULTE</span> (
+    <span class='foreign primary'>RECETTEID</span>,
+    <span class='foreign primary'>VISITEURIP</span>
+  )
+</div>
+</div>
+</body>
+</html>

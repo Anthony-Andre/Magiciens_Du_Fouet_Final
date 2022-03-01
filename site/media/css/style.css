@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {
+	margin: 0;
+	padding:0;
+	background-color: #ffffff;
+	font-family: 'Lobster', cursive;
+}
+#site {
+	margin: auto;
+	border: 1px solid #030;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-areas:
+		"header header"
+		"nav article"
+		"footer footer";
+}
+header {
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+header a, #signature{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header img{
+	width: 125px;
+	height: auto;
+}
+header h1{
+	font-family: 'Lobster', cursive;
+	font-size: 50px;
+	color: rgb(206, 151, 50);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav, #petitsEcrans {
+	grid-area: nav;
+	background-color: rgb(206, 151, 50);
+}
+#petitsEcrans{
+	display: none;
+}
+ul {
+	margin: 0;
+	padding:0;	
+	text-align: center;
+}
+ul li {
+	list-style: none;
+	padding: 20px;
+}
+.liste a:hover{
+	text-decoration: underline;
+}
+ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+.lienVersRecette, #lienContact{
+	color: #000;
+}
+.lienVersRecette:hover, #lienContact:hover{
+	color: rgb(206, 151, 50);
+	text-decoration: underline;
+}
+#imgBoutonLike{
+	width: 40px;
+	height: auto;
+}
+#boutonLike{
+	margin-left: 15px;
+}
+#boutonLike:hover{
+	cursor: pointer;
+}
+article {
+	grid-area: article;
+	background-color: #fff;
+	padding: 15px;
+	text-align: center;
+}
+.listeAutresRecettes{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+#photoDuChef{
+	width: 30%;
+	height: auto;
+}
+ol{
+	display: inline-block;
+	text-align: left;
+}
+article h1 {
+	text-align: center;
+	font-size: 25px;
+}
+article img{
+	width: 50%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+article h2, article h4{
+	font-size: 18px;
+}
+article p, article h2, article h4{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.symbolesEchelle{
+	width: 22px;
+	height: auto;
+	margin: auto 5px;
+}
+.lien {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.lien:hover {
+	color: #00f;
+	text-decoration: underline;
+}
+.box {
+	width: 75%;
+	margin: auto;
+	padding: 15px;
+	text-align: center;
+}
+input[type='text'], input[type='password'], textarea[name='description'], select, input[type='number'], input[type='time'], #etapes label, .formulaireContact{
+	width: 100%;
+	padding: 15px;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+}
+#listeEtapesUpdate{
+	display: block;
+}
+button{
+	font-family: 'Lobster', cursive;
+}
+#etapes, #ingredients{
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+.divIngredient input, .divIngredient select{
+	width: auto;
+	padding: 5px;
+}
+#ingredients{
+	margin: auto;
+	padding-top: 15px;
+}
+.boutonsIngredients{
+padding: 15px;
+}
+.boutonsIngredients button, .boutonsEtapes button{
+	width: 25%;
+}
+.inputEtape{
+	width: 100%;
+	padding: 15px;
+}
+textarea[name='article'] {
+	width: 100%;
+	padding: 15px;
+	height: 100px;
+}
+input[type='submit'] {
+	font-family: 'Lobster', cursive;
+	width: 45%;
+	padding: 15px;
+	font-size: 20px;
+	background-color: rgb(206, 151, 50);
+	color: white;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
+}
+input[type='submit']:hover {
+	background-color: #F60;
+}
+#identifiant, #mdp{
+	margin-bottom: 20px;
+}
+.red {
+	color: red;
+}
+.green {
+	color: #060;
+}
+footer {
+	grid-area: footer;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+/* Code Authentication : */ 
+
+.grilleCode{
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  column-gap: 5px;
+  row-gap: 5px;
+  margin: 15px auto;
+  width: 40%;
+}
+.boutonCode{
+  width: 90%;
+  height: 55px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boutonCode{
+  text-decoration: none;
+  color: black;
+  background: rgb(204,204,204);
+}
+button{
+  width: 75px;
+  background: rgb(206, 151, 50);
+  color: #fff;
+  padding: 10px 0;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+
+#envoyer{
+  margin-left: 10px;
+}
+
+
+
+@media screen and (max-width: 850px) {
+#site {
+	width: 90%;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"header"
+		"nav"
+		"article"
+		"footer";
+}
+nav{
+	display: none;
+}
+#petitsEcrans{
+	display: block;
+}
+ul {
+	display: flex;	
+	justify-content: center;
+}	
+.listeAutresRecettes{
+	grid-template-columns: 1fr;
+}
+}
+
+@media screen and (max-width: 1350px) {
+
+	.divIngredient input{
+		width: 5%;
+	}
+}
+
